@@ -1,11 +1,20 @@
 temps = []
 
 while True:
-    temperature = input("Enter temperature ('done' to stop): ")
+    temp = input("Enter temperature: ")
 
-    if temperature == "done":
+    if temp == "done":
         break
 
-    temps.append(float(temperature))
+    temps.append(float(temp))
 
-print(temps)
+
+def summarize(temps):
+    return {
+        "minimum": min(temps),
+        "maximum": max(temps),
+        "average": sum(temps) / len(temps)
+    }
+
+
+print(summarize(temps))
